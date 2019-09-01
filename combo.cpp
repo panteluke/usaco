@@ -1,5 +1,5 @@
 /*
-ID: panteli1
+ID: ...
 PROG: combo
 LANG: C++11
 */

@@ -1,5 +1,5 @@
  /*
-ID: panteli1
+ID: ...
 LANG: JAVA
 TASK: sort3
 */
