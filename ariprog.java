@@ -1,13 +1,11 @@
 /*
 ID: ...
 LANG: JAVA
-TASK: ariprog
+PROG: ariprog
 */
 import java.io.*;
 import java.util.*;
-
 class ariprog {
-
  
   public static void main (String [] args) throws IOException {
     // Use BufferedReader rather than RandomAccessFile; it's much faster
@@ -17,9 +15,7 @@ class ariprog {
     // Use StringTokenizer vs. readLine/split -- lots faster
     int n = Integer.parseInt(f.readLine());
     int m = Integer.parseInt(f.readLine());
-
     n= n-1;
-
     Map<Integer, TreeSet<Integer>> solutions = new TreeMap<Integer, TreeSet<Integer>>();
     boolean[] bis = new boolean[125001];
     Arrays.fill(bis, false);
@@ -27,13 +23,11 @@ class ariprog {
         for (int j=0;j<m + 1;j++)
             bis[i*i + j*j] = true;
     }
-
     int maxm = m * m + m * m;
     
     while (maxm > 0) {
         int b = maxm / n;
         
-
         for (int k = b; k> 0; k--) {
             int a = maxm  - k * n;
             boolean toP = true;
@@ -55,28 +49,23 @@ class ariprog {
                 }
             }
         }
-
         while (!bis[--maxm]);
     }
-
     if (solutions.isEmpty()) {
         out.println("NONE");
     }
     else {
         Iterator it = solutions.entrySet().iterator();
         while (it.hasNext()) {
-
             Map.Entry<Integer, TreeSet<Integer>> pairs = (Map.Entry<Integer, TreeSet<Integer>>)it.next();
             TreeSet<Integer> ll = pairs.getValue();
             for (Integer lll : ll) {
                 out.println( lll + " " + pairs.getKey());
             }
         }
-
     }
     
     out.close();                                  // close the output file
     System.exit(0);                               // don't omit this!
   }
 }
-
