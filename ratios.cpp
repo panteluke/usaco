@@ -1,5 +1,5 @@
 /*
-ID: psarog1
+ID: ...
 PROG: ratios
 LANG: C++11
 */
